@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body id="page-top">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix">
       <div class="container-fluid">
         <div class="navbar-header">
 
@@ -47,6 +47,30 @@
     </nav>
 
     <div class="page"><%= yield %></div>
+
+    <section id="contact">
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="primary">
+            <p>Interested in giving me a job?! Of course, why wouldn't you be?! Shoot me a call or email because I'm the bees knees!</p>
+          </div>
+          <div class="col-lg-4 col-lg-offset-2 text-center">
+            <i style="visibility: visible; animation-name: bounceIn;" class="fa fa-phone fa-3x wow bounceIn"></i>
+            <p>303-303-3030</p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <i style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            <p><a href="mailto:your-email@your-domain.com">xvalentino13@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
 
   </body>
 </html>
