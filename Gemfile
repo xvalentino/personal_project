@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor'
+
 # Bootstrap Gems
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
