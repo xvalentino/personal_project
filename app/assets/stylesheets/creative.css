@@ -4,8 +4,13 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.welcome {
+  height: 500px;
+}
+
 .page {
   margin-top: 100px;
+  text-align: center;
 }
 
 html,
