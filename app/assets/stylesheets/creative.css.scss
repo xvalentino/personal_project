@@ -3,7 +3,7 @@ $tertiary: #734254;
 $primary: #D7B2C1;
 
 #controls { 
-  color: white;
+  color: $secondary;
 }
 
 #contact {
@@ -19,11 +19,12 @@ $primary: #D7B2C1;
 
 .welcome {
   background-color: $secondary;
-  height: 700px;
+  height:95vh;
   width: 100%;
 }
 
 .page {
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -57,6 +58,11 @@ a {
 a:hover,
 a:focus {
   color: $tertiary;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bolder;
 }
 
 h1,
