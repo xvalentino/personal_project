@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body id="page-top">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix">
       <div class="container-fluid">
 
 
@@ -26,13 +26,16 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a class="page-scroll" href="#about">About</a>
+                <%= link_to "About", '/about', class: "page-scroll" %>
               </li>
               <li>
-                <a class="page-scroll" href="#services">Services</a>
+                <%= link_to "Simulator", '/simulator', class: "page-scroll" %>
               </li>
               <li>
-                <a class="page-scroll" href="#contact">Contact</a>
+                <%= link_to "Contact", '#contact', class: "page-scroll" %>
+              </li>
+              <li>
+                <%= link_to "My Stats", '/account', class: "page-scroll" %>
               </li>
             </ul>
           </div>
