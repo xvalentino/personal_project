@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
 gem 'rails_12factor'
 
 # Bootstrap Gems
