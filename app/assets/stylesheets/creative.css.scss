@@ -2,6 +2,12 @@ $secondary: #D1C7C0;
 $tertiary: #734254;
 $primary: #D7B2C1;
 
+#banner {
+  height: 135px;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+
 .card {
   padding-top: 20px;
   margin: 10px 0 20px 0;
@@ -196,7 +202,6 @@ $primary: #D7B2C1;
 }
 
 .card.hovercard .cardheader {
-  background: url("http://lorempixel.com/850/280/nature/4/");
   background-size: cover;
   height: 135px;
 }

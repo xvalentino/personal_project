@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
     user.nickname = data.info.nickname
     user.bio = data.info.description
+    user.banner = data.extra.raw_info.profile_banner_url
     user.image = data.info.image.sub("_normal", "")
     user.save
     user
