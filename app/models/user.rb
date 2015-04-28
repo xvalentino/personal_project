@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     user = User.find_or_create_by(uid: data.uid)
 
     user.nickname = data.info.nickname
+    user.bio = data.info.description
     user.image = data.info.image.sub("_normal", "")
     user.save
     user

@@ -34,9 +34,17 @@
               <li>
                 <%= link_to "Contact", '#contact', class: "page-scroll" %>
               </li>
+
+              <% if session[:user_id] %>
               <li>
                 <%= link_to "My Stats", '/account', class: "page-scroll" %>
               </li>
+            <% else %>
+              <li>
+                <%= link_to "Log In", "/auth/twitter", class: "page-scroll" %>
+              </li>
+            <% end %>
+
             </ul>
           </div>
           <!-- /.navbar-collapse -->
