@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'mapbox-rails'
 gem 'pry'
 gem 'capybara'
 gem 'figaro'
