@@ -1,9 +1,12 @@
 <div class="container">
 <div class="row">
   <div id="simulator">
-    <div id="map">
-      <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/xvalentino.lol862f5/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoieHZhbGVudGlubyIsImEiOiJ5dG43MDFjIn0.tEQIYibYnwUQNhCg1v0jtw'></iframe>
-    </div>
+    <div id='map' class='dark'></div>
+    <script>
+console.log(L)
+L.mapbox.accessToken = 'pk.eyJ1IjoieHZhbGVudGlubyIsImEiOiJ5dG43MDFjIn0.tEQIYibYnwUQNhCg1v0jtw';
+L.mapbox.map('map', 'xvalentino.lol862f5');
+    </script>
     <div id="controls">
       <form action="">
         <input type="checkbox" name="vehicle" value="Car">Vaccinations
