@@ -8,6 +8,13 @@ RSpec.feature "User login", type: :feature do
     click_link_or_button "Twitter Sign In"
     expect(current_path).to eq(account_path)
   end
+
+  scenario "should be able to see their information after login" do
+    visit root_path
+    mock_omniauth_user
+    click_link_or_button "Twitter Sign In"
+    expect(page).to have_content "mock_user"
+  end
 end
 
 private
