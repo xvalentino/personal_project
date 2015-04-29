@@ -6,6 +6,10 @@ $primary: #D7B2C1;
   height: 135px;
   background-size: 100% auto;
   overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
 }
 
 .card {
