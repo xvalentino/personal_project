@@ -18,7 +18,6 @@ $(function() {
       style: function(feature) {
         //update the style however you want
         var green = correctColor(populations[feature.properties.NAME]);
-        console.log(green);
         feature.properties.fill = 'rgb(0, ' + green+ ', 0 )';
       }
     }).toGeoJSON();
