@@ -18,7 +18,8 @@ $(function() {
       style: function(feature) {
         //update the style however you want
         var green = correctColor(populations[feature.properties.NAME]);
-        feature.properties.fill = 'rgb(0, ' + green+ ', 0 )';
+        var color = 255 - green;
+        feature.properties.fill = 'rgb(' + color + ', 255,' + color + ' )';
       }
     }).toGeoJSON();
   }
@@ -27,7 +28,7 @@ $(function() {
     $.getJSON('/state_population.json').then(function(population) {
       states = updateStates(states, population);
       L.mapbox.accessToken = 'pk.eyJ1IjoieHZhbGVudGlubyIsImEiOiJ5dG43MDFjIn0.tEQIYibYnwUQNhCg1v0jtw';
-      var map = L.mapbox.map('map', 'xvalentino.lol862f5').setView([39, -98], 4);
+      var map = L.mapbox.map('map', 'xvalentino.m2ama5kc').setView([39, -98], 4);
       var featureLayer = L.mapbox.featureLayer(states).addTo(map);
     })
   })
