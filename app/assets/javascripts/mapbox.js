@@ -27,7 +27,7 @@ $(function() {
     $.getJSON('/state_population.json').then(function(population) {
       states = updateStates(states, population);
       L.mapbox.accessToken = 'pk.eyJ1IjoieHZhbGVudGlubyIsImEiOiJ5dG43MDFjIn0.tEQIYibYnwUQNhCg1v0jtw';
-      var map = L.mapbox.map('map', 'examples.map-i86nkdio').setView([39, -98], 4);
+      var map = L.mapbox.map('map', 'xvalentino.lol862f5').setView([39, -98], 4);
       var featureLayer = L.mapbox.featureLayer(states).addTo(map);
     })
   })
