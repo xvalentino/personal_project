@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'responders', '~> 2.0'
+gem 'faraday'
 gem 'pry'
 gem 'capybara'
 gem 'figaro'
