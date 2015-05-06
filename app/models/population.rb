@@ -1,15 +1,18 @@
 class Population
-  attr_reader :connection
+  attr_reader :connection, :cache
 
   def initialize
     @connection = Faraday.new(url: 'http://api.census.gov/data/2010')
+    @cache = ActiveSupport::Cache::MemoryStore.new
   end
 
   def counties
-    raw = parse(connection.get('sf1?key=297776c8f16b33f03bbeeea854e3583cfcb55c69&get=PCT0120001&for=county:*'))
+    raw = Rails.cache.fetch('county_call', :expires => 24.hour) do
+      parse(connection.get('sf1?key=297776c8f16b33f03bbeeea854e3583cfcb55c69&get=PCT0120001&for=county:*'))
+    end
     raw.shift
     raw.inject({}) do |collection, stuff|
-      collection[stuff[2]] = stuff[0] 
+      collection[stuff[2]] = stuff[0].to_i
       collection
     end
   end
