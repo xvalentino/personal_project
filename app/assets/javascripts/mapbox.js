@@ -15,7 +15,6 @@ $(document).ready(function() {
     var density = population/area;
     var max = sortedDensities[sortedDensities.length-600];
     var color = ((density/max)*255)+50;
-    console.log(population, area, density, max, color);
     return Math.floor(color)
   };
 
