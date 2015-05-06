@@ -4,6 +4,11 @@ class Population
   def initialize
     @connection = Faraday.new(url: 'http://api.census.gov/data/2010')
     @cache = ActiveSupport::Cache::MemoryStore.new
+    @@data = File.read("public/county_polygons_500k.json")
+  end
+
+  def shapes
+    @@data
   end
 
   def counties

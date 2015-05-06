@@ -33,7 +33,7 @@ $(document).ready(function() {
     }).toGeoJSON();
   }
 
-  $.getJSON('/county_polygons_500k.json').then(function(counties) {
+  $.getJSON('/shapes').then(function(counties) {
     $.getJSON('/counties').then(function(population) {
       modifiedCounties = updateCounties(counties, population);
       L.mapbox.accessToken = 'pk.eyJ1IjoieHZhbGVudGlubyIsImEiOiJ5dG43MDFjIn0.tEQIYibYnwUQNhCg1v0jtw';
