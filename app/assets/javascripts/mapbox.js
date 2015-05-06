@@ -1,11 +1,10 @@
 $(document).ready(function() { 
-  var sortedDensities = null;
 
   function sortNumber(a,b) {
     return a - b;
   }
 
-  densities = []
+  densities = [];
 
   var getDensity = function(population, area) {
     var density = population/area;
@@ -14,18 +13,20 @@ $(document).ready(function() {
 
   var correctColor = function(population, area) {
     var density = population/area;
-    var max = sortedDensities[sortedDensities.length-100];
-    var color = density/max;
+    var max = sortedDensities[sortedDensities.length-600];
+    var color = ((density/max)*255)+50;
+    console.log(population, area, density, max, color);
     return Math.floor(color)
   };
 
   var updateCounties = function(counties, populations) {
-    if(!sortedDensities) {
-      sortedDensities = densities.sort(sortNumber);
+    for(var i = 0; i < counties.features.length; i++) {
+      var feature = counties.features[i];
+      getDensity(populations[feature.properties.COUNTY], feature.properties.CENSUSAREA);
     }
+    sortedDensities = densities.sort(sortNumber);
     return L.geoJson(counties, {
       style: function(feature) {
-        getDensity(populations[feature.properties.COUNTY], feature.properties.CENSUSAREA);
         var offset = correctColor(populations[feature.properties.COUNTY], feature.properties.CENSUSAREA);
         var color = 255 - offset;
         feature.properties.fill = 'rgb(' + color + ', 255,' + color + ' )';

@@ -8,7 +8,7 @@ class Population
 
   def counties
     raw = Rails.cache.fetch('county_call', :expires => 24.hour) do
-      parse(connection.get('sf1?key=297776c8f16b33f03bbeeea854e3583cfcb55c69&get=PCT0120001&for=county:*'))
+      parse(connection.get('sf1?key=297776c8f16b33f03bbeeea854e3583cfcb55c69&get=P0010001&for=county:*'))
     end
     raw.shift
     raw.inject({}) do |collection, stuff|
