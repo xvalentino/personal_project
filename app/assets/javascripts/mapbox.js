@@ -69,10 +69,9 @@ $(document).ready(function() {
                 "coordinates": turf.center(feature)
               }}
           }).filter(function (feature) {
-            return feature.properties.GEO_ID !== selectedCounty.properties.GEO_ID;
+            return feature.properties.GEO_ID === selectedCounty.properties.GEO_ID;
           })
         }
-        debugger;
         var nearestPoint = turf.nearest(turf.center(selectedCounty), against);
         var coordinates = nearestPoint.geometry.coordinates.geometry.coordinates;
         return leafletPip.pointInLayer(coordinates, featureLayer, true)[0].feature;
