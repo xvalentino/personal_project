@@ -54,10 +54,6 @@ $(document).ready(function() {
           return feature;
         })
         selectedCounty.properties.fill = "red";
-
-        console.log('PARENT', parent.properties.COUNTY);
-        console.log('SELECTED', selectedCounty.properties.COUNTY);
-
         genetic_algorithm(parent, ++count);
       }
 
