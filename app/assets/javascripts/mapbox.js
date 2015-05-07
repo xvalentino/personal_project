@@ -48,14 +48,15 @@ $(document).ready(function() {
 
         var parent = getParents(selectedCounty);
         featureLayer._geojson.features = featureLayer._geojson.features.map(function (feature) {
-          if (feature.properties.NAME === selectedCounty.properties.NAME) {
+          if (feature.properties.GEO_ID === selectedCounty.properties.GEO_ID) {
             feature.properties.fill = 'red';
           }
           return feature;
         })
         selectedCounty.properties.fill = "red";
-        console.log('PARENT', parent.properties.COUNTY)
-          console.log('SELECTED', selectedCounty.properties.COUNTY)
+
+        console.log('PARENT', parent.properties.COUNTY);
+        console.log('SELECTED', selectedCounty.properties.COUNTY);
 
         genetic_algorithm(parent, ++count);
       }
