@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'vcr'
 gem 'responders', '~> 2.0'
-gem 'faraday'
+gem 'faraday', '< 0.9.0'
 gem 'pry'
 gem 'capybara'
 gem 'figaro'
